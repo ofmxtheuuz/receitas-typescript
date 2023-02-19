@@ -1,0 +1,14 @@
+<h1>{{this.receita.nome}}</h1>
+<p>
+    {{this.receita.descricao}}
+</p>
+<h2>
+    Como fazer a receita
+</h2>
+<div id="{{this.receita._id}}"></div>
+
+<a href="/" class="mt-3">Retornar</a>
+
+<script>
+    $('#{{this.receita._id}}').html($.parseHTML(decodeURI("{{this.receita.conteudo}}"))[0].data)
+</script>

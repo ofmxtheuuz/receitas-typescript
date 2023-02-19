@@ -1,0 +1,19 @@
+<a class="mb-2" href="/criar">Crie sua receita agora mesmo!</a>
+<h1>
+    Visualizar todas as receitas
+</h1>
+{{#each this.receitas }}
+<div class="card w-100 mt-5">
+    <div class="card-body p-3">
+        <h2>{{nome}}</h2>   
+        <p>{{descricao}}</p>
+        <a href="/receita?id={{_id}}">
+            <button type="submit" class="btn btn-primary">
+                Visualizar
+            </button>
+        </a>
+        <hr>
+        <p>Criado por {{autor}} em {{ data_publicacao }}</p>
+    </div>
+</div>
+{{/each}}

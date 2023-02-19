@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="lib/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.min.css">
+<link rel="stylesheet" href="lib/trumbowyg/dist/plugins/giphy/ui/trumbowyg.giphy.min.css">
+<link rel="stylesheet" href="lib/trumbowyg/dist/plugins/emoji/ui/trumbowyg.emoji.min.css">
+<link rel="stylesheet" href="lib/trumbowyg/dist/ui/trumbowyg.min.css">
+<link rel="stylesheet" href="lib/trumbowyg/dist/plugins/specialchars/ui/trumbowyg.specialchars.min.css">
+
+<div class="card">
+    <div class="card-body p-3">
+        <form action="/service/create?najs=9856GDNJKS2657436525627SJDNA5DSA65723654FSAFSA76523897654DSA758762FSAS8658733745632" method="post">
+            <h2 class="mb-4">
+                Crie sua receita
+            </h2>
+            <input type="text" class="form-control mb-2" name="nome" placeholder="Nome da receita">
+            <input type="text" class="form-control mb-2" name="descricao" placeholder="Descrição da receita">
+            <input type="number" class="form-control mb-2" name="porcoes" placeholder="Essa receita é pra quantas pessoas">
+            <input type="text" class="form-control mb-2" name="autor" placeholder="Autor da receita">
+            <textarea id="howido" cols="30" rows="10" name="conteudo" placeholder="Mostre para o mundo como se faz essa receita"></textarea>
+            <button type="submit" class="btn btn-success w-25 mt-2 mb-2">Criar</button>
+        </form>
+        <a href="/" class="mt-5">Retornar</a>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/lib/trumbowyg/dist/langs/pt_br.min.js"></script>
+<script src="/lib/trumbowyg/dist/trumbowyg.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/fontfamily/trumbowyg.fontfamily.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/fontsize/trumbowyg.fontsize.min.js"></script>
+<script src="//rawcdn.githack.com/RickStrahl/jquery-resizable/0.35/dist/jquery-resizable.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/preformatted/trumbowyg.preformatted.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/giphy/trumbowyg.giphy.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/emoji/trumbowyg.emoji.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/template/trumbowyg.template.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/resizimg/trumbowyg.resizimg.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/specialchars/trumbowyg.specialchars.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/pasteembed/trumbowyg.pasteembed.min.js"></script>   
+
+<script>
+    $("#howido").trumbowyg({    
+     lang: 'pt_br',
+     btnsDef: {
+         // Create a new dropdown
+         image: {
+             dropdown: ['insertImage', 'noembed'],
+             ico: 'insertImage'
+         }
+     },
+     btns: [
+         ['viewHTML'],
+         ['undo', 'redo'], // Only supported in Blink browsers
+         ['formatting'],
+         ['fontfamily'],
+         ['strong', 'em', 'del'],
+         ['superscript', 'subscript'],
+         ['link'],
+         ['giphy'],
+         ['emoji'],
+         ['fontsize'],
+         ['insertImage'],
+         ['insertAudio'],
+         ['foreColor', 'backColor'],
+         ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+         ['unorderedList', 'orderedList'],
+         ['horizontalRule'],
+         ['preformatted'],
+         ['removeformat'],
+         ['fullscreen'],
+ 
+     ],
+     plugins: {
+        giphy: {
+            apiKey: 'fUcSaI7uvh2rciUfcgH00DI6IgD0ezlw'
+        },
+     },
+     autogrow: true,
+     urlProtocol: true,
+     minimalLinks: true
+    });
+</script>
