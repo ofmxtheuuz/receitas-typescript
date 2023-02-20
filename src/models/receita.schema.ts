@@ -9,7 +9,8 @@ const Receitas = db.model("Receitas", new db.Schema({
         type: Date,
         default: Date.now
     },
-    autor: String
+    autor: String,
+    user_id: String
 }))
 
 export default Receitas

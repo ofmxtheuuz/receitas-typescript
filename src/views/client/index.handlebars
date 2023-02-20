@@ -1,4 +1,7 @@
 <a class="mb-2" href="/criar">Crie sua receita agora mesmo!</a>
+{{#if user}}
+<h5 class="my-1">Seja bem-vindo {{user.nome}}, <a href="/dashboard">acesse sua dashboard</a>! <a href="/logout">Logout</a></h5>
+{{/if}}
 <h1>
     Visualizar todas as receitas
 </h1>
