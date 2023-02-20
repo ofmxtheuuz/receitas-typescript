@@ -5,11 +5,19 @@
 <h1>
     Visualizar todas as receitas
 </h1>
+{{#if receitas}}
+<h5>
+    Foram encontradas {{receitas.length}} receita(s)
+</h5>
+{{else}}
+<h5>Não foi encontrada nenhuma receita, <a href="/criar">que tal criar a primeira?</a></h5>
+{{/if}}
 {{#each this.receitas }}
 <div class="card w-100 mt-5">
     <div class="card-body p-3">
         <h2>{{nome}}</h2>   
         <p>{{descricao}}</p>
+        <p>Porção: {{porcoes}}</p>
         <a href="/receita?id={{_id}}">
             <button type="submit" class="btn btn-primary">
                 Visualizar

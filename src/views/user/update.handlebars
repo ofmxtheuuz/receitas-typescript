@@ -6,15 +6,16 @@
 
 <div class="card">
     <div class="card-body p-3">
-        <form action="/service/create?najs=9856GDNJKS2657436525627SJDNA5DSA65723654FSAFSA76523897654DSA758762FSAS8658733745632" method="post">
+        <form action="/service/update?najs=9856GDNJKS2657436525627SJDNA5DSA65723654FSAFSA76523897654DSA758762FSAS8658733745632" method="post">
             <h2 class="mb-4">
-                Crie sua receita
+                Atualizar sua receita
             </h2>
-            <input type="text" class="form-control mb-2" name="nome" placeholder="Nome da receita">
-            <input type="text" class="form-control mb-2" name="descricao" placeholder="Descrição da receita">
-            <input type="number" class="form-control mb-2" name="porcoes" placeholder="Essa receita é pra quantas pessoas">
-            <textarea id="howido" cols="30" rows="10" name="conteudo" placeholder="Mostre para o mundo como se faz essa receita"></textarea>
-            <button type="submit" class="btn btn-success w-25 mt-2 mb-2">Criar</button>
+            <input type="hidden" name="receita_id" value="{{this.receita._id}}">
+            <input type="text" class="form-control mb-2" name="nome" placeholder="Nome da receita" value="{{ this.receita.nome }}">
+            <input type="text" class="form-control mb-2" name="descricao" placeholder="Descrição da receita" value="{{ this.receita.descricao }}">
+            <input type="number" class="form-control mb-2" name="porcoes" placeholder="Essa receita é pra quantas pessoas" value="{{ this.receita.porcoes }}">
+            <textarea id="howido" cols="30" rows="10" name="conteudo" placeholder="Mostre para o mundo como se faz essa receita">{{ this.receita.conteudo }}</textarea>
+            <button type="submit" class="btn btn-success w-25 mt-2 mb-2">Salvar alterações</button>
         </form>
         <a href="/" class="mt-5">Retornar</a>
     </div>
@@ -32,6 +33,7 @@
 <script src="/lib/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js"></script>
 <script src="/lib/trumbowyg/dist/plugins/giphy/trumbowyg.giphy.min.js"></script>
 <script src="/lib/trumbowyg/dist/plugins/emoji/trumbowyg.emoji.min.js"></script>
+<script src="/lib/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js"></script>
 <script src="/lib/trumbowyg/dist/plugins/template/trumbowyg.template.min.js"></script>
 <script src="/lib/trumbowyg/dist/plugins/resizimg/trumbowyg.resizimg.min.js"></script>
 <script src="/lib/trumbowyg/dist/plugins/specialchars/trumbowyg.specialchars.min.js"></script>
@@ -42,6 +44,11 @@
     $("#howido").trumbowyg({    
      lang: 'pt_br',
      btnsDef: {
+         // Create a new dropdown
+         image: {
+             dropdown: ['insertImage', 'noembed'],
+             ico: 'insertImage'
+         }
      },
      btns: [
          ['viewHTML'],
@@ -54,6 +61,7 @@
          ['giphy'],
          ['emoji'],
          ['fontsize'],
+         ['insertImage'],
          ['insertAudio'],
          ['foreColor', 'backColor'],
          ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],

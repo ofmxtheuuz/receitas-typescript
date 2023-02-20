@@ -20,7 +20,7 @@ router.get("/criar", (req: Request, res: Response) => {
 router.post("/service/create", (req: Request, res: Response) => {
     if(req.isAuthenticated()) {
         let user: any = req.user
-        Receitas.create({ nome: req.body.nome, descricao: req.body.descricao, conteudo: req.body.conteudo, porcoes: Number(req.body.porcoes), autor: user.nome })
+        Receitas.create({ nome: req.body.nome, descricao: req.body.descricao, conteudo: req.body.conteudo, porcoes: Number(req.body.porcoes), autor: user.nome, user_id: user.id })
         res.redirect("/")
     } else {
         res.redirect("/login")

@@ -11,7 +11,7 @@ router.get("/login", (req: Request, res: Response) => {
 router.post("/login", passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }))
 
 router.get("/registro", (req: Request, res: Response) => {
-    res.render("auth/registro")
+    res.render("auth/registro", { title: "Registre-se "})
 })
 router.post("/registro", (req: Request, res: Response) => {
     User.create({
